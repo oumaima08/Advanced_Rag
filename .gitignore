@@ -1,0 +1,32 @@
+# Environnement virtuel Python
+.venv/
+venv/
+env/
+
+# Base vectorielle Chroma (générée localement par ingest.py)
+chroma_db/*
+!chroma_db/.gitkeep
+
+# Documents personnels (ne pas partager ses PDF sur GitHub)
+docs/*
+!docs/.gitkeep
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# Fichiers système Windows
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user

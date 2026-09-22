@@ -1,0 +1,4 @@
+[server]
+# Désactive l'inspection des modules tiers par le file watcher de Streamlit.
+# Corrige l'erreur : "Examining the path of torch.classes raised RuntimeError"
+fileWatcherType = "none"

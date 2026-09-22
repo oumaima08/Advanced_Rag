@@ -1,0 +1,30 @@
+# ============================================================
+# requirements.txt — Projet RAG naïf local
+# Versions figées pour éviter les breaking changes
+# Python 3.11 requis
+# ============================================================
+
+# --- LangChain core + community ---
+langchain==0.3.25
+langchain-community==0.3.24
+
+# --- Intégration Ollama via API REST (http://localhost:11434) ---
+langchain-ollama==0.2.3
+
+# --- Vector store ---
+# chromadb 1.0.9 est la version minimale requise par langchain-chroma 0.2.5
+chromadb==1.0.9
+langchain-chroma==0.2.5
+
+# --- Embeddings locaux ---
+sentence-transformers==3.4.1
+langchain-huggingface==0.1.2
+
+# --- Chargement de PDF ---
+pypdf==5.4.0
+
+# --- Interface utilisateur ---
+streamlit==1.45.1
+
+# --- Appels HTTP (vérification connectivité Ollama) ---
+requests==2.32.3
