@@ -7,6 +7,12 @@ env/
 chroma_db/*
 !chroma_db/.gitkeep
 
+# Index BM25 (généré localement par ingest.py)
+bm25_index.pkl
+
+# Conversations sauvegardées (données personnelles)
+conversations/
+
 # Documents personnels (ne pas partager ses PDF sur GitHub)
 docs/*
 !docs/.gitkeep

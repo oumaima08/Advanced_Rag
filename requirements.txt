@@ -1,7 +1,6 @@
 # ============================================================
-# requirements.txt — Projet RAG naïf local
-# Versions figées pour éviter les breaking changes
-# Python 3.11 requis
+# requirements.txt — Projet RAG Avancé (Hybrid + Reranking + Mémoire)
+# Versions figées — Python 3.11 requis
 # ============================================================
 
 # --- LangChain core + community ---
@@ -11,20 +10,33 @@ langchain-community==0.3.24
 # --- Intégration Ollama via API REST (http://localhost:11434) ---
 langchain-ollama==0.2.3
 
-# --- Vector store ---
-# chromadb 1.0.9 est la version minimale requise par langchain-chroma 0.2.5
+# --- Vector store Chroma ---
 chromadb==1.0.9
 langchain-chroma==0.2.5
 
-# --- Embeddings locaux ---
+# --- Embeddings locaux (modèle plus puissant que MiniLM) ---
 sentence-transformers==3.4.1
 langchain-huggingface==0.1.2
 
-# --- Chargement de PDF ---
-pypdf==5.4.0
+# --- Recherche hybride BM25 (sparse retriever) ---
+rank_bm25==0.2.2
+
+# --- Reranking CrossEncoder avec FlashRank (léger, CPU-friendly) ---
+flashrank==0.2.10
+
+# --- Chargement de documents (multi-format) ---
+pypdf==5.4.0          # PDF
+python-docx==1.2.0    # Word (.docx)
+python-pptx==1.0.2    # PowerPoint (.pptx)
+openpyxl==3.1.5       # Excel (.xlsx)
+markdown==3.10.3      # Markdown (.md)
 
 # --- Interface utilisateur ---
 streamlit==1.45.1
 
 # --- Appels HTTP (vérification connectivité Ollama) ---
 requests==2.32.3
+
+# --- Sérialisation BM25 (sauvegarde index BM25 sur disque) ---
+pickle5==0.0.12; python_version < "3.8"
+# pickle est natif Python 3.8+ — pas de dépendance supplémentaire
